@@ -39,3 +39,11 @@ Optional: an interaction between the recepients of the information and their pre
 ```
 
 ![](http://yuml.me/691bf6a7.png)
+
+### Data Model
+
+```
+[Meal|-name:string;-pic:image;-totalCost:integer|cook()]<>-ingredients*>[Ingredient|-cost:integer],[MealMessage|-offer1:Meal;-offer2:Meal;-validUntil:date]<>->[Meal],[MealResponseMessage|-choice:Meal;-instantBuy:boolean;-dateAndTime:date]-[MealMessage],[MealResponseMessage]<>->[Meal],[MealDatabase|-responseMessages:Meal|nextDay();notifyNewMeal();addMeal()]<>-[MealResponseMessage],[MealDatabase]<>-[Meal]
+```
+
+![](http://yuml.me/a63fc466.png)
