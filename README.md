@@ -32,3 +32,10 @@ Optional: an interaction between the recepients of the information and their pre
 
 ## B Design
 
+### Use Cases
+
+```
+[Koch]-(Essen zubereiten),(Essen zubereiten)<(Essen),(isst)<(Essen),[Schueler]-(isst),[Schueler]-(waehlt Essen am Vortag),[Koch]-(plant Mengen),(plant Mengen)<(informiert ueber Essen),(waehlt Essen am Vortag)-(informiert ueber Essen)
+```
+
+![](http://yuml.me/691bf6a7.png)
