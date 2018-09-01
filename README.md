@@ -1,5 +1,7 @@
 # foodBot
 
+# Criteria
+
 ## A Planning
 
 ### The scenario
@@ -16,7 +18,6 @@ In addition to that it'd be useful being informed in case of sold out meals or c
  - Any documentation associated with evidence of consultation has been linked to the cover page.
 
 
-
 ### The proposed product
  - The proposed product has been identified.
  - The proposed product resolves the inadequacies identified or the unanswered question.
@@ -28,4 +29,6 @@ Optional: an interaction between the recepients of the information and their pre
 
 ### Specific performance (success) criteria
  - Specific performance criteria have been drawn up that make it possible to evaluate the success of the product in criterion E.
+
+## B Design
 
