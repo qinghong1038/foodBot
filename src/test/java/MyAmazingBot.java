@@ -59,6 +59,6 @@ public class MyAmazingBot extends TelegramLongPollingBot {
 	}
 
 	public String getBotToken() {
-		return "657674321:AAGQDtt0w6Equnwaw55R-I--dkXDHInHfeM";
+		return "<replace-me>";
 	}
 }
