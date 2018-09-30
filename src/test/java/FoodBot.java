@@ -7,13 +7,13 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-public class MyAmazingBot extends TelegramLongPollingBot {
+public class FoodBot extends TelegramLongPollingBot {
 	private Map<String, AtomicInteger> choices = new HashMap<>();
 	public static final String choice1 = "/1";
 	public static final String choice2 = "/2";
 	public static final String choice3 = "/3";
 
-	public MyAmazingBot() {
+	public FoodBot() {
 		choices.put(choice1, new AtomicInteger(0));
 		choices.put(choice2, new AtomicInteger(0));
 		choices.put(choice3, new AtomicInteger(0));
@@ -55,7 +55,7 @@ public class MyAmazingBot extends TelegramLongPollingBot {
 	}
 
 	public String getBotUsername() {
-		return "RajaThiedmannsMyAmazingbot";
+		return "RajaThiedmannsFoodBot";
 	}
 
 	public String getBotToken() {
