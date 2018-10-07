@@ -43,7 +43,8 @@ Optional: an interaction between the recepients of the information and their pre
 ### Data Model
 
 ```
-[Meal|-name:string;-pic:image;-totalCost:integer|cook()]<>-ingredients*>[Ingredient|-cost:integer],[MealMessage|-offer1:Meal;-offer2:Meal;-validUntil:date]<>->[Meal],[MealResponseMessage|-choice:Meal;-instantBuy:boolean;-dateAndTime:date]-[MealMessage],[MealResponseMessage]<>->[Meal],[MealDatabase|-responseMessages:Meal|nextDay();notifyNewMeal();addMeal()]<>-[MealResponseMessage],[MealDatabase]<>-[Meal]
+[FoodBot|choices:Map;|onUpdateReceived();getBotUsername();getBotToken()],[Main||static void main()]-instantiates>[FoodBot],[TelegramLongPollingBot]^[FoodBot]
 ```
 
-![](http://yuml.me/a63fc466.png)
+
+![](http://yuml.me/223933cc.png)
