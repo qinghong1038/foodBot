@@ -1,3 +1,4 @@
+package foodBot;
 // other classes are being used and imported
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +10,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 
-public class FoodBot extends TelegramLongPollingBot {
+public class OrderBot extends TelegramLongPollingBot {
 	// 1. initialize constants
 	public static final String choice1 = "/1";
 	public static final String choice2 = "/2";
@@ -19,7 +20,7 @@ public class FoodBot extends TelegramLongPollingBot {
 	private Map<String, AtomicInteger> choices = new HashMap<>();
 
 	// 3. here a new instance / object of class is being created (within the Constructor)
-	public FoodBot() {
+	public OrderBot() {
 		// initialize (inner) state: choice <-> responses given (initial 0)
 		choices.put(choice1, new AtomicInteger(0));
 		choices.put(choice2, new AtomicInteger(0));
@@ -68,6 +69,6 @@ public class FoodBot extends TelegramLongPollingBot {
 
 	// return secret for authentication
 	public String getBotToken() {
-		return "<replace-me>";
+		return "657674321:AAGQDtt0w6Equnwaw55R-I--dkXDHInHfeM";
 	}
 }

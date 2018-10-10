@@ -1,3 +1,4 @@
+package foodBot;
 // other classes are being used and imported
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -13,7 +14,8 @@ public class Main {
 
 		try {
 			// Creation of my new foodbot object and pass to telegram API
-			botsApi.registerBot(new FoodBot());
+			botsApi.registerBot(new OrderBot());
+			botsApi.registerBot(new AdminBot());
 		} catch (TelegramApiException e) {
 			// catch = in case of exception show error message 
 			e.printStackTrace();
