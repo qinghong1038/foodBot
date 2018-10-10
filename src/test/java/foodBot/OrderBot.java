@@ -17,7 +17,7 @@ public class OrderBot extends TelegramLongPollingBot {
 	public static final String choice3 = "/3";
 
 	// 2. created on class instantiation
-	private Map<String, AtomicInteger> choices = new HashMap<>();
+	public Map<String, AtomicInteger> choices = new HashMap<>();
 
 	// 3. here a new instance / object of class is being created (within the Constructor)
 	public OrderBot() {

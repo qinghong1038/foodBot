@@ -14,8 +14,9 @@ public class Main {
 
 		try {
 			// Creation of my new foodbot object and pass to telegram API
-			botsApi.registerBot(new OrderBot());
-			botsApi.registerBot(new AdminBot());
+			OrderBot myOrderBot = new OrderBot();
+			botsApi.registerBot(myOrderBot);
+			botsApi.registerBot(new AdminBot(myOrderBot));
 		} catch (TelegramApiException e) {
 			// catch = in case of exception show error message 
 			e.printStackTrace();

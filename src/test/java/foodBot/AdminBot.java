@@ -10,9 +10,14 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 /**
  * @author raja
- *
  */
 public class AdminBot extends TelegramLongPollingBot {
+	private OrderBot orderBot;
+
+	public AdminBot(OrderBot bot) {
+		this.orderBot = bot;
+	}
+	
 	@Override
 	public void onUpdateReceived(Update update) {
 	    // We check if the update has a message and the message has text
@@ -21,6 +26,7 @@ public class AdminBot extends TelegramLongPollingBot {
 	                .setChatId(update.getMessage().getChatId())
 	                .setText(update.getMessage().getText());
 	        try {
+	        	orderBot.choices.clear();
 	            execute(message); // Call method to send the message
 	        } catch (TelegramApiException e) {
 	            e.printStackTrace();
