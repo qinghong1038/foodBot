@@ -48,3 +48,10 @@ Optional: an interaction between the recepients of the information and their pre
 
 
 ![](http://yuml.me/223933cc.png)
+
+
+
+
+
+### Data Model
+[AdminBot|choices:Map;|onUpdateReceived();getBotUsername();getBotToken()],[Main||static void main()]-instantiates>[FoodBot],[TelegramLongPollingBot]^[Adminbot]
