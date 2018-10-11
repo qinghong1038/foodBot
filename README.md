@@ -43,15 +43,8 @@ Optional: an interaction between the recepients of the information and their pre
 ### Data Model
 
 ```
-[FoodBot|choices:Map;|onUpdateReceived();getBotUsername();getBotToken()],[Main||static void main()]-instantiates>[FoodBot],[TelegramLongPollingBot]^[FoodBot]
+[AdminBot||onUpdateReceived();getBotUsername();getBotToken()],[FoodBot||static void main()]-instantiates>[AdminBot],[TelegramLongPollingBot]^[AdminBot],[OrderBot|choices:Map;|onUpdateReceived();getBotUsername();getBotToken()],[FoodBot]-instantiates>[OrderBot],[TelegramLongPollingBot]^[OrderBot],[AdminBot]->[OrderBot]
 ```
 
 
-![](http://yuml.me/223933cc.png)
-
-
-
-
-
-### Data Model
-[AdminBot|choices:Map;|onUpdateReceived();getBotUsername();getBotToken()],[Main||static void main()]-instantiates>[FoodBot],[TelegramLongPollingBot]^[Adminbot]
+![](http://yuml.me/246248b6.png)
