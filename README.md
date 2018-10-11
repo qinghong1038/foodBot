@@ -40,7 +40,7 @@ Optional: an interaction between the recepients of the information and their pre
 
 ![](http://yuml.me/691bf6a7.png)
 
-### Data Model
+### UML Model
 
 ```
 [AdminBot||onUpdateReceived();getBotUsername();getBotToken()],[FoodBot||static void main()]-instantiates>[AdminBot],[TelegramLongPollingBot]^[AdminBot],[OrderBot|choices:Map;|onUpdateReceived();getBotUsername();getBotToken()],[FoodBot]-instantiates>[OrderBot],[TelegramLongPollingBot]^[OrderBot],[AdminBot]->[OrderBot]
