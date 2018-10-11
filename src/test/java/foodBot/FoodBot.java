@@ -5,7 +5,7 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 // starting point class
-public class Main {
+public class FoodBot {
 	// starting method (by default). Argument String array: not being used
 	public static void main(String[] args) {
 		// Initialization of Telegram application programming interface  
