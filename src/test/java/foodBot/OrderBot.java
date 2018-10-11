@@ -21,10 +21,7 @@ public class OrderBot extends TelegramLongPollingBot {
 
 	// 3. here a new instance / object of class is being created (within the Constructor)
 	public OrderBot() {
-		// initialize (inner) state: choice <-> responses given (initial 0)
-		choices.put(choice1, new AtomicInteger(0));
-		choices.put(choice2, new AtomicInteger(0));
-		choices.put(choice3, new AtomicInteger(0));
+		reset();
 	}
 
 	public void onUpdateReceived(Update update) {
@@ -70,5 +67,13 @@ public class OrderBot extends TelegramLongPollingBot {
 	// return secret for authentication
 	public String getBotToken() {
 		return "657674321:AAGQDtt0w6Equnwaw55R-I--dkXDHInHfeM";
+	}
+
+	public void reset() {
+		// initialize (inner) state: choice <-> responses given (initial 0)
+		choices.clear();
+		choices.put(choice1, new AtomicInteger(0));
+		choices.put(choice2, new AtomicInteger(0));
+		choices.put(choice3, new AtomicInteger(0));
 	}
 }

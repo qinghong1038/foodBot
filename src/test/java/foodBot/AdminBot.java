@@ -3,6 +3,9 @@
  */
 package foodBot;
 
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -22,17 +25,28 @@ public class AdminBot extends TelegramLongPollingBot {
 	public void onUpdateReceived(Update update) {
 	    // We check if the update has a message and the message has text
 	    if (update.hasMessage() && update.getMessage().hasText()) {
-	        SendMessage message = new SendMessage() // Create a SendMessage object with mandatory fields
-	                .setChatId(update.getMessage().getChatId())
-	                .setText(update.getMessage().getText());
+	        String userMessageText = update.getMessage().getText();
+	        String botMessageText = userMessageText;
+	        if ( "/status".equals(userMessageText)) {
+	        	botMessageText = orderBot.choices.toString();
+	        } else if("/reset".equals(userMessageText)) {
+	        	orderBot.reset();
+	        	
+	        	botMessageText = "reset done";
+	        }
+
+	        SendMessage botResponseMessage = new SendMessage() // Create a SendMessage object with mandatory fields
+	        		.setChatId(update.getMessage().getChatId())
+	        		.setText(botMessageText);
+	        
 	        try {
-	        	orderBot.choices.clear();
-	            execute(message); // Call method to send the message
+	            execute(botResponseMessage); // Call method to send the message
 	        } catch (TelegramApiException e) {
 	            e.printStackTrace();
 	        }
 	    }
 	}
+	
 
 	public String getBotUsername() {
 		return "secondfoodbot";
