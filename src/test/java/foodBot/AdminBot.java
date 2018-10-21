@@ -30,16 +30,16 @@ public class AdminBot extends TelegramLongPollingBot {
 	        } else if("/reset".equals(userMessageText)) {
 	        	orderBot.reset();
 	        	botMessageText = "reset done";
-	        } else if(userMessageText.startsWith("/changeMeal")) {
-
+	        } else if(userMessageText.startsWith("/changeMeals")) {
 	        	try {
 	        		String[] split = StringUtils.split(userMessageText, ',');
 	        		String meal1 = split[1];
 	        		String meal2 = split[2];
+	        		botMessageText = orderBot.choices.toString();
 	        		orderBot.changeMeals(meal1, meal2);
-	        		botMessageText = "Meal 1 and 2 changed";
+	        		botMessageText += "\nMeal 1 and 2 changed";
 	        	} catch (Exception e) {
-	        		botMessageText = "Please send change as: /changeMeal,mealName1,mealName2";
+	        		botMessageText = "Please send change as: /changeMeals,mealName1,mealName2";
 	        	}
 	        }
 
