@@ -3,9 +3,7 @@
  */
 package foodBot;
 
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
-
+import org.apache.commons.lang3.StringUtils;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -31,8 +29,18 @@ public class AdminBot extends TelegramLongPollingBot {
 	        	botMessageText = orderBot.choices.toString();
 	        } else if("/reset".equals(userMessageText)) {
 	        	orderBot.reset();
-	        	
 	        	botMessageText = "reset done";
+	        } else if(userMessageText.startsWith("/changeMeal")) {
+
+	        	try {
+	        		String[] split = StringUtils.split(userMessageText, ',');
+	        		String meal1 = split[1];
+	        		String meal2 = split[2];
+	        		orderBot.changeMeals(meal1, meal2);
+	        		botMessageText = "Meal 1 and 2 changed";
+	        	} catch (Exception e) {
+	        		botMessageText = "Please send change as: /changeMeal,mealName1,mealName2";
+	        	}
 	        }
 
 	        SendMessage botResponseMessage = new SendMessage() // Create a SendMessage object with mandatory fields

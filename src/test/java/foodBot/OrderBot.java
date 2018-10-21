@@ -18,6 +18,8 @@ public class OrderBot extends TelegramLongPollingBot {
 
 	// 2. created on class instantiation
 	public Map<String, AtomicInteger> choices = new HashMap<>();
+	private String mealName1 = "Spaghetti";
+	private String mealName2 = "Burrito";
 
 	// 3. here a new instance / object of class is being created (within the Constructor)
 	public OrderBot() {
@@ -31,8 +33,8 @@ public class OrderBot extends TelegramLongPollingBot {
 
 			String responseMessageText;
 			if (!choices.keySet().contains(userMessage)) {
-				String meal1 = choice1 + " " + "Spaghetti" + "\n";
-				String meal2 = choice2 + " " + "Burrito" + "\n";
+				String meal1 = choice1 + " " + mealName1 + "\n";
+				String meal2 = choice2 + " " + mealName2 + "\n";
 				String decline = choice3 + " " + "Nein, danke!";
 
 				responseMessageText = meal1 + meal2 + decline;
@@ -75,5 +77,11 @@ public class OrderBot extends TelegramLongPollingBot {
 		choices.put(choice1, new AtomicInteger(0));
 		choices.put(choice2, new AtomicInteger(0));
 		choices.put(choice3, new AtomicInteger(0));
+	}
+
+	public void changeMeals(String meal1, String meal2) {
+		mealName1 = meal1;
+		mealName2 = meal2;
+		reset();
 	}
 }
