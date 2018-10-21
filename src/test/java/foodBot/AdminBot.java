@@ -9,6 +9,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import foodBot.model.Meal;
+
 /**
  * @author raja
  */
@@ -26,20 +28,28 @@ public class AdminBot extends TelegramLongPollingBot {
 	        String userMessageText = update.getMessage().getText();
 	        String botMessageText = userMessageText;
 	        if ( "/status".equals(userMessageText)) {
-	        	botMessageText = orderBot.choices.toString();
+	        	botMessageText = orderBot.m_choices.toString();
 	        } else if("/reset".equals(userMessageText)) {
 	        	orderBot.reset();
 	        	botMessageText = "reset done";
 	        } else if(userMessageText.startsWith("/changeMeals")) {
 	        	try {
 	        		String[] split = StringUtils.split(userMessageText, ',');
-	        		String meal1 = split[1];
-	        		String meal2 = split[2];
-	        		botMessageText = orderBot.choices.toString();
-	        		orderBot.changeMeals(meal1, meal2);
+	        		String mealName1 = split[1];
+	        		String mealPrice1 = split[2];
+	        		String mealName2 = split[3];
+	        		String mealPrice2 = split[4];
+	        		
+	        		int price1 = Integer.valueOf(mealPrice1);
+	        		int price2 = Integer.valueOf(mealPrice2);
+	        		
+	        		botMessageText = orderBot.m_choices.toString();
+	        		orderBot.changeMeals(
+	        				new Meal(mealName1, price1), 
+	        				new Meal(mealName2, price2));
 	        		botMessageText += "\nMeal 1 and 2 changed";
 	        	} catch (Exception e) {
-	        		botMessageText = "Please send change as: /changeMeals,mealName1,mealName2";
+	        		botMessageText = "Please send change as: /changeMeals,meal1Name,meal1Price,meal2Name,meal2Price";
 	        	}
 	        }
 

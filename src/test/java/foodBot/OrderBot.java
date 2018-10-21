@@ -9,6 +9,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import foodBot.model.Meal;
+
 
 public class OrderBot extends TelegramLongPollingBot {
 	// 1. initialize constants
@@ -17,9 +19,9 @@ public class OrderBot extends TelegramLongPollingBot {
 	public static final String choice3 = "/3";
 
 	// 2. created on class instantiation
-	public Map<String, AtomicInteger> choices = new HashMap<>();
-	private String mealName1 = "Spaghetti";
-	private String mealName2 = "Burrito";
+	public Map<String, AtomicInteger> m_choices = new HashMap<>();
+	private Meal m_meal1 = new Meal("Spaghetti", 950);
+	private Meal m_meal2 = new Meal("Burrito", 1150);;
 
 	// 3. here a new instance / object of class is being created (within the Constructor)
 	public OrderBot() {
@@ -32,14 +34,14 @@ public class OrderBot extends TelegramLongPollingBot {
 			String userMessage = update.getMessage().getText();
 
 			String responseMessageText;
-			if (!choices.keySet().contains(userMessage)) {
-				String meal1 = choice1 + " " + mealName1 + "\n";
-				String meal2 = choice2 + " " + mealName2 + "\n";
+			if (!m_choices.keySet().contains(userMessage)) {
+				String mealDescr1 = choice1 + " " + m_meal1 + "\n";
+				String mealDescr2 = choice2 + " " + m_meal2 + "\n";
 				String decline = choice3 + " " + "Nein, danke!";
 
-				responseMessageText = meal1 + meal2 + decline;
+				responseMessageText = mealDescr1 + mealDescr2 + decline;
 			} else {
-				choices.get(userMessage).incrementAndGet();
+				m_choices.get(userMessage).incrementAndGet();
 				
 				responseMessageText = "Thanks for choosing: " + userMessage;
 			}
@@ -54,8 +56,8 @@ public class OrderBot extends TelegramLongPollingBot {
 				e.printStackTrace();
 			}
 
-			for (String choice : choices.keySet()) {
-				System.out.println(choice + " " + choices.get(choice).get());
+			for (String choice : m_choices.keySet()) {
+				System.out.println(choice + " " + m_choices.get(choice).get());
 			}
 			System.out.println();
 		}
@@ -73,15 +75,15 @@ public class OrderBot extends TelegramLongPollingBot {
 
 	public void reset() {
 		// initialize (inner) state: choice <-> responses given (initial 0)
-		choices.clear();
-		choices.put(choice1, new AtomicInteger(0));
-		choices.put(choice2, new AtomicInteger(0));
-		choices.put(choice3, new AtomicInteger(0));
+		m_choices.clear();
+		m_choices.put(choice1, new AtomicInteger(0));
+		m_choices.put(choice2, new AtomicInteger(0));
+		m_choices.put(choice3, new AtomicInteger(0));
 	}
 
-	public void changeMeals(String meal1, String meal2) {
-		mealName1 = meal1;
-		mealName2 = meal2;
+	public void changeMeals(Meal meal1, Meal meal2) {
+		m_meal1 = meal1;
+		m_meal2 = meal2;
 		reset();
 	}
 }
