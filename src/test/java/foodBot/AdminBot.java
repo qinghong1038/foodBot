@@ -28,7 +28,7 @@ public class AdminBot extends TelegramLongPollingBot {
 	        String userMessageText = update.getMessage().getText();
 	        String botMessageText = userMessageText;
 	        if ( "/status".equals(userMessageText)) {
-	        	botMessageText = orderBot.m_choices.toString();
+	        	botMessageText = orderBot.toString();
 	        } else if("/reset".equals(userMessageText)) {
 	        	orderBot.reset();
 	        	botMessageText = "reset done";
@@ -43,7 +43,7 @@ public class AdminBot extends TelegramLongPollingBot {
 	        		int price1 = Integer.valueOf(mealPrice1);
 	        		int price2 = Integer.valueOf(mealPrice2);
 	        		
-	        		botMessageText = orderBot.m_choices.toString();
+	        		botMessageText = orderBot.toString();
 	        		orderBot.changeMeals(
 	        				new Meal(mealName1, price1), 
 	        				new Meal(mealName2, price2));
