@@ -28,9 +28,6 @@ public class OrderBot extends TelegramLongPollingBot {
 
 	// 2. created on class instantiation
 	public Map<String, Meal> m_choices = new HashMap<>();
-	private Meal m_meal1;
-	private Meal m_meal2;
-	private Meal m_noMeal;
 
 	// 3. here a new instance / object of class is being created (within the Constructor)
 	public OrderBot() {
@@ -41,8 +38,8 @@ public class OrderBot extends TelegramLongPollingBot {
 		// We check if the update has a message and the message has text
 		if (update.hasMessage() && update.getMessage().hasText()) {
 			String responseMessageText = "Hi! Tomorrows meals in our cantine:";
-			String mealDescr1 = "\n1. " + m_meal1;
-			String mealDescr2 = "\n2. " + m_meal2;
+			String mealDescr1 = "\n1. " + m_choices.get(choice1);
+			String mealDescr2 = "\n2. " + m_choices.get(choice2);
 
 			responseMessageText += mealDescr1 + mealDescr2;
 
@@ -127,19 +124,14 @@ public class OrderBot extends TelegramLongPollingBot {
 	public void reset() {
 		// initialize (inner) state: choice <-> responses given (initial 0)
 		m_choices.clear();
-		m_meal1 = new Meal("Spaghetti", 950);
-		m_choices.put(choice1, m_meal1);
-		m_meal2 = new Meal("Burrito", 1150);
-		m_choices.put(choice2, m_meal2);
-		m_noMeal = new Meal("NoThanks", 0);
-		m_choices.put(choice3, m_noMeal);
+		m_choices.put(choice1, new Meal("Spaghetti", 950));
+		m_choices.put(choice2, new Meal("Burrito", 1150));
+		m_choices.put(choice3, new Meal("NoThanks", 0));
 	}
 
 	public void changeMeals(Meal meal1, Meal meal2) {
 		reset();
-		m_meal1 = meal1;
-		m_choices.put(choice1, m_meal1);
-		m_meal2 = meal2;
-		m_choices.put(choice2, m_meal2);
+		m_choices.put(choice1, meal1);
+		m_choices.put(choice2, meal2);
 	}
 }
