@@ -25,7 +25,7 @@ In addition to that it'd be useful being informed in case of sold out meals or c
 
 An application that helps informing students and staff on a daily basis (~6:30 and 7:30 in the morning) about the upcoming meals that day. The application can be configured in advance for the upcoming meals of the week / month.
 
-Optional: an interaction between the recepients of the information and their preferred choice for the upcoming meal could be made.
+Optional: an interaction between the recipients of the information and their preferred choice for the upcoming meal could be made.
 
 ### Specific performance (success) criteria
  - Specific performance criteria have been drawn up that make it possible to evaluate the success of the product in criterion E.
