@@ -1,0 +1,29 @@
+// git log --pretty=format:'%<(12)%ad %an: %s' -30 --date=short > workLog.txt
+
+2018-11-10   Raja Thiedmann: Typo resolved
+2018-11-10   Raja Thiedmann: UML diagrams updated: use cases and class relationships
+2018-11-04   Raja Thiedmann: Add update mechansim for new meal messages; ability to cancel orders
+2018-11-04   Raja Thiedmann: Refactoring: removed redundant members for meal choices
+2018-10-27   Raja Thiedmann: Switch OrderBot implementation to inline keyboard buttons and callback functions
+2018-10-21   Raja Thiedmann: Introduce meal class and data type
+2018-10-21   Raja Thiedmann: Send stats on mealsChange
+2018-10-21   Raja Thiedmann: Implement changeMeal message with exception handling
+2018-10-11   Raja Thiedmann: Update README.md
+2018-10-11   Raja Thiedmann: Update documentation
+2018-10-11   Raja Thiedmann: Class renaming
+2018-10-11   Raja Thiedmann: First two commands: status and reset implemented
+2018-10-11   Raja Thiedmann: Update README.md
+2018-10-10   Raja Thiedmann: First interaction of AdminBot and OrderBot
+2018-10-10   Raja Thiedmann: Fix for #12
+2018-10-07   Raja Thiedmann: Document data model as UML diagram (as it is now)
+2018-09-30   Raja Thiedmann: Inline documentation - part 1
+2018-09-30   Raja Thiedmann: #5 rename class and bot
+2018-09-29   Markus Tiede: Update MyAmazingBot.java
+2018-09-29   Raja Thiedmann: #4 implemented
+2018-09-23   Raja Thiedmann: MyAmazingBot implemented
+2018-09-01   Markus Tiede: Update README.md
+2018-09-01   Markus Tiede: First use cases added
+2018-09-01   Markus Tiede: Update README.md
+2018-06-09   rajathie: First content for criteria a
+2018-06-09   rajathie: Criteria A added
+2018-06-09   rajathie: Initial commit
