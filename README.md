@@ -35,16 +35,38 @@ Optional: an interaction between the recepients of the information and their pre
 ### Use Cases
 
 ```
-[Koch]-(Essen zubereiten),(Essen zubereiten)<(Essen),(isst)<(Essen),[Schueler]-(isst),[Schueler]-(waehlt Essen am Vortag),[Koch]-(plant Mengen),(plant Mengen)<(informiert ueber Essen),(waehlt Essen am Vortag)-(informiert ueber Essen)
+[Admin]-(current order status),
+[Admin]-(change meals),
+[Admin]-(reset bot),
+(change meals)>(current order status),
+[Customer]-(chooses food),
+[Customer]-(change order),
+[Customer]-(cancels order),
+(change order)>(cancels order)
 ```
 
-![](http://yuml.me/691bf6a7.png)
+![](http://yuml.me/e9dc5c26.png)
 
 ### UML Model
 
 ```
-[AdminBot||onUpdateReceived();getBotUsername();getBotToken()],[FoodBot||static void main()]-instantiates>[AdminBot],[TelegramLongPollingBot]^[AdminBot],[OrderBot|choices:Map;|onUpdateReceived();getBotUsername();getBotToken()],[FoodBot]-instantiates>[OrderBot],[TelegramLongPollingBot]^[OrderBot],[AdminBot]->[OrderBot]
+[AdminBot|orderBot:OrderBot|onUpdateReceived();getBotUsername();getBotToken()],
+[FoodBot||static void main()],
+[OrderBot|choices:Map;chatIdsWithOrders:Map;allTimeChatIds:Set|reset();changeMeals()],
+[Meal|name:String;price:int;amountOfOrder:AtomicInteger|],
+[TelegramLongPollingBot||onUpdateReceived();getBotUsername();getBotToken()],
+
+[FoodBot]-instantiates>[OrderBot],
+[FoodBot]-instantiates>[AdminBot],
+
+[TelegramLongPollingBot]^[OrderBot],
+[TelegramLongPollingBot]^[AdminBot],
+
+[AdminBot]->[OrderBot],
+
+[OrderBot]->[Meal],
+[AdminBot]->[Meal]
 ```
 
 
-![](http://yuml.me/246248b6.png)
+![](http://yuml.me/f1db6ecb.png)
