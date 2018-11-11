@@ -70,3 +70,9 @@ Optional: an interaction between the recipients of the information and their pre
 
 
 ![](http://yuml.me/f1db6ecb.png)
+
+## running
+
+```
+mvn clean verify exec:java
+```
