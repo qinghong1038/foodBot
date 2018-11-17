@@ -66,37 +66,7 @@ public class OrderBot extends TelegramLongPollingBot {
 					e.printStackTrace();
 				}
 			} else {
-				String responseMessageText = "Hi! Tomorrows meals in our cantine:";
-				String mealDescr1 = "\n1. " + m_choices.get(choice1);
-				String mealDescr2 = "\n2. " + m_choices.get(choice2);
-				
-				responseMessageText += mealDescr1 + mealDescr2;
-				m_allTimeChatIds.add(chatId);
-				
-				SendMessage myMessage = new SendMessage() // Create a SendMessage object with mandatory fields
-						.setChatId(chatId).setText(responseMessageText);
-				
-				InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-				List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-				List<InlineKeyboardButton> rowInline = new ArrayList<>();
-				rowInline.add(new InlineKeyboardButton().setText("Meal 1")
-						.setCallbackData(choice1));
-				rowInline.add(new InlineKeyboardButton().setText("Meal 2")
-						.setCallbackData(choice2));
-				rowInline.add(new InlineKeyboardButton().setText("No, thanks")
-						.setCallbackData(choice3));
-				// Set the keyboard to the markup
-				rowsInline.add(rowInline);
-				// Add it to the message
-				markupInline.setKeyboard(rowsInline);
-				myMessage.setReplyMarkup(markupInline);
-				
-				try {
-					execute(myMessage); // Call method to send the message
-					// System.out.println(userMessage);
-				} catch (TelegramApiException e) {
-					e.printStackTrace();
-				}
+				sendMealOffer(chatId);
 			}
 		} else if (update.hasCallbackQuery()) {
             // Set variables
@@ -150,6 +120,40 @@ public class OrderBot extends TelegramLongPollingBot {
 		System.out.println(this.toString());
 	}
 
+	private void sendMealOffer(Long chatId) {
+		String responseMessageText = "Hi! Tomorrows meals in our cantine:";
+		String mealDescr1 = "\n1. " + m_choices.get(choice1);
+		String mealDescr2 = "\n2. " + m_choices.get(choice2);
+		
+		responseMessageText += mealDescr1 + mealDescr2;
+		m_allTimeChatIds.add(chatId);
+		
+		SendMessage myMessage = new SendMessage() // Create a SendMessage object with mandatory fields
+				.setChatId(chatId).setText(responseMessageText);
+		
+		InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+		List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+		List<InlineKeyboardButton> rowInline = new ArrayList<>();
+		rowInline.add(new InlineKeyboardButton().setText("Meal 1")
+				.setCallbackData(choice1));
+		rowInline.add(new InlineKeyboardButton().setText("Meal 2")
+				.setCallbackData(choice2));
+		rowInline.add(new InlineKeyboardButton().setText("No, thanks")
+				.setCallbackData(choice3));
+		// Set the keyboard to the markup
+		rowsInline.add(rowInline);
+		// Add it to the message
+		markupInline.setKeyboard(rowsInline);
+		myMessage.setReplyMarkup(markupInline);
+		
+		try {
+			execute(myMessage); // Call method to send the message
+			// System.out.println(userMessage);
+		} catch (TelegramApiException e) {
+			e.printStackTrace();
+		}
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -186,18 +190,8 @@ public class OrderBot extends TelegramLongPollingBot {
 		m_choices.put(choice1, meal1);
 		m_choices.put(choice2, meal2);
 		
-		String changeMealText = "Meals have changed!";
-		
 		for (Long chatId : m_allTimeChatIds) {
-			SendMessage myMessage = new SendMessage() // Create a SendMessage object with mandatory fields
-					.setChatId(chatId).setText(changeMealText);
-			try {
-				execute(myMessage); // Call method to send the message
-				// System.out.println(userMessage);
-			} catch (TelegramApiException e) {
-				e.printStackTrace();
-			}
+			sendMealOffer(chatId);
 		}
-		
 	}
 }

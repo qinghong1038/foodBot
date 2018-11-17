@@ -66,7 +66,7 @@ public class AdminBot extends TelegramLongPollingBot {
 	        		setNewMeal1(new Meal(mealName1, price1));
 	        		setNewMeal2(new Meal(mealName2, price2));
 	        		
-	        		botMessageText += "New Meal 1 and 2 configured for tomorrow!";
+	        		botMessageText = "New Meal 1 and 2 configured for tomorrow!";
 	        	} catch (Exception e) {
 	        		botMessageText = "Please send change as: /changeMeals,meal1Name,meal1Price,meal2Name,meal2Price";
 	        	}
