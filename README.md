@@ -109,17 +109,23 @@ graphical visualisation of the output
 
 ## D Functionality
 
-## running
+### running
 
 ```
 mvn clean verify exec:java
 ```
 
-## video 
+### video 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/1H95Bqd535E/0.jpg)](https://www.youtube.com/watch?v=1H95Bqd535E)
 
-## script
-### key features
-### success criteria
-### extension points 
+### script
+#### key features
+#### success criteria
+#### extension points 
+
+## Evaluation
+
+### met sucess criteria
+### client response
+### future improvement
