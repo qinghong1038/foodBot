@@ -29,6 +29,23 @@ Optional: an interaction between the recipients of the information and their pre
 
 ## B Design
 
+### [Record of Tasks (ROT)](workLog.txt)
+
+```
+### Test plan 
+for sucesss criteria
+```
+
+```
+### Brief summary of methods 
+```
+
+```
+### Design of the solution 
+detailed flow charts
+graphical visualisation of the output
+```
+
 ### Use Cases
 
 ```
