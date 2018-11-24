@@ -46,6 +46,8 @@ detailed flow charts
 graphical visualisation of the output
 ```
 
+## C Development
+
 ### Use Cases
 
 ```
@@ -82,8 +84,30 @@ graphical visualisation of the output
 [AdminBot]->[Meal]
 ```
 
-
 ![](http://yuml.me/f1db6ecb.png)
+
+```
+### Screenshots  
+```
+
+```
+### Identification of sources used with citation
+ - e.g. Telegram library and examples
+```
+
+
+### Examples  
+
+#### 1
+#### 2
+#### 3
+#### 4
+#### 5
+#### 6
+#### 7 
+
+
+## D Functionality
 
 ## running
 
