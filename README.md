@@ -44,7 +44,7 @@ for sucesss criteria
 
 Detailed flow charts:
 
-#### Place meal order from customer POV
+#### Customer POV: Place meal order 
 ```
 (start)->(open Telegram),
 (start)->(receive meal push notification),
@@ -69,11 +69,28 @@ Detailed flow charts:
 ![](http://yuml.me/cc4a94b6.png)
 
 
-#### Change meal process from admin POV
+#### Admin POV: Change meal process
 
-```
-graphical visualisation of the output
-```
+
+### Graphical Visualization
+
+Of the output:
+
+#### Customer POV
+
+##### Meal Choice
+
+![](img/mealChoice.png)
+
+##### Choice cancellation
+
+![](img/cancelChoice.png)
+
+#### Admin POV
+
+##### Meal Change
+
+##### Meal Status
 
 ## C Development
 
