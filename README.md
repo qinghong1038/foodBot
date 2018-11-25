@@ -86,6 +86,21 @@ for sucesss criteria
 
 ##### Admin POV: Change meal process
 
+```
+(start)->(open Telegram),
+(Open Telegram)->|a|->(start Adminbot conversation)->|b|,
+|a|->(open Adminbot conversation)->|b|,
+|b|->(wait for instructions),
+(wait for instructions)->(send status),
+(send status)->(receive status)->(wait for instructions),
+(wait for instructions)->(send meal plan),
+(send meal plan)->(send confirmation),
+(send confirmation)->(wait for instructions),
+(wait for instructions)->(change meals)->(end)
+```
+
+![](http://yuml.me/18bad2bd.png)
+
 ### Graphical Visualization
 
 Of the output:
