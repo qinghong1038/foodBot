@@ -40,9 +40,38 @@ for sucesss criteria
 ### Brief summary of methods 
 ```
 
-```
 ### Design of the solution 
-detailed flow charts
+
+Detailed flow charts:
+
+#### Place meal order from customer POV
+```
+(start)->(open Telegram),
+(start)->(receive meal push notification),
+(receive meal push notification)->(receive meal choice),
+(Open Telegram)->|a|->(start Foodbot conversation)->|b|,
+|a|->(open Foodbot conversation)->|b|,
+|b|->(send message)-><z>[not ordered]->(receive meal choice)->|c|,
+<z>[already ordered]->(cancel order?),
+(cancel order?)-><y>[yes]->(order up to date?),
+(order up to date?)-><x>[yes]->(cancel confirmation),
+<x>[no]->(receive confirmation),
+<y>[no]->(send message),
+(cancel confirmation)->(send message),
+|c|->(choose meal 1)->|d|,
+|c|->(choose meal 2)->|d|,
+|c|->(no thanks)->|d|,
+|d|->(receive confirmation),
+(receive confirmation)->(send message),
+(receive confirmation)->(end)
+```
+
+![](http://yuml.me/cc4a94b6.png)
+
+
+#### Change meal process from admin POV
+
+```
 graphical visualisation of the output
 ```
 
