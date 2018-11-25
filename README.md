@@ -78,7 +78,7 @@ Of the output:
 
 #### Customer POV
 
-##### Meal Choice
+##### Meal choice
 
 ![](img/mealChoice.png)
 
@@ -88,9 +88,17 @@ Of the output:
 
 #### Admin POV
 
-##### Meal Change
+##### Meal status
 
-##### Meal Status
+![](img/mealStatus.png)
+
+##### Plan next meal
+
+![](img/planMeal.png)
+
+##### Meal change
+
+![](img/mealChangeAndStatus.png)
 
 ## C Development
 
