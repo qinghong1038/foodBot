@@ -46,16 +46,17 @@ for sucesss criteria
 
 ```
 [Admin]-(current order status),
-[Admin]-(change meals),
-[Admin]-(reset bot),
+[Admin]-(plan next meals),
+(plan next meals)>(change meals),
 (change meals)>(current order status),
-[Customer]-(chooses food),
+[Customer]-(place order),
 [Customer]-(change order),
-[Customer]-(cancels order),
-(change order)>(cancels order)
+[Customer]-(cancel order),
+(change order)>(cancel order),
+(change order)>(place order)
 ```
 
-![](http://yuml.me/e9dc5c26.png)
+![](http://yuml.me/491a8726.png)
 
 #### UML - Activity diagrams
 
@@ -101,7 +102,7 @@ Of the output:
 
 #### Admin POV
 
-##### Meal status
+##### Order status
 
 ![](img/mealStatus.png)
 
