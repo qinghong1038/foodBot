@@ -42,9 +42,24 @@ for sucesss criteria
 
 ### Design of the solution 
 
-Detailed flow charts:
+#### UML - Use Case diagrams
 
-#### Customer POV: Place meal order 
+```
+[Admin]-(current order status),
+[Admin]-(change meals),
+[Admin]-(reset bot),
+(change meals)>(current order status),
+[Customer]-(chooses food),
+[Customer]-(change order),
+[Customer]-(cancels order),
+(change order)>(cancels order)
+```
+
+![](http://yuml.me/e9dc5c26.png)
+
+#### UML - Activity diagrams
+
+##### Customer POV: Place meal order 
 ```
 (start)->(open Telegram),
 (start)->(receive meal push notification),
@@ -68,9 +83,7 @@ Detailed flow charts:
 
 ![](http://yuml.me/cc4a94b6.png)
 
-
-#### Admin POV: Change meal process
-
+##### Admin POV: Change meal process
 
 ### Graphical Visualization
 
@@ -101,21 +114,6 @@ Of the output:
 ![](img/mealChangeAndStatus.png)
 
 ## C Development
-
-### Use Cases
-
-```
-[Admin]-(current order status),
-[Admin]-(change meals),
-[Admin]-(reset bot),
-(change meals)>(current order status),
-[Customer]-(chooses food),
-[Customer]-(change order),
-[Customer]-(cancels order),
-(change order)>(cancels order)
-```
-
-![](http://yuml.me/e9dc5c26.png)
 
 ### UML Model
 
