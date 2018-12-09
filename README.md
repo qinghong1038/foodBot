@@ -129,6 +129,15 @@ Of the output:
 
 ![](img/mealChangeAndStatus.png)
 
+### Test plan 
+For success criteria
+
+| Test type | nature of test | Example |
+|-----------|----------------|---------|
+|           |                |         |
+|           |                |         |
+|           |                |         |
+
 ## C Development
 
 ### UML Model
