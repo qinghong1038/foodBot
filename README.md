@@ -143,11 +143,11 @@ For success criteria
 ### UML Model
 
 ```
-[AdminBot|orderBot:OrderBot|onUpdateReceived();getBotUsername();getBotToken()],
+[AdminBot|orderBot:OrderBot|getBotToken();getBotUsername();notifyNewMealsSend();onUpdateReceived();getNewMeal1();getNewMeal2()],
 [FoodBot||static void main()],
-[OrderBot|choices:Map;chatIdsWithOrders:Map;allTimeChatIds:Set|reset();changeMeals()],
-[Meal|name:String;price:int;amountOfOrder:AtomicInteger|],
-[TelegramLongPollingBot||onUpdateReceived();getBotUsername();getBotToken()],
+[OrderBot|allTimeChatIds:Set;chatIdsWithOrders:Map;choices:Map|changeMeals();reset();toString();onUpdateReceived()],
+[Meal|amountOfOrder:AtomicInteger;name:String;price:int|toString()],
+[TelegramLongPollingBot||getBotToken();getBotUsername();onUpdateReceived()],
 
 [FoodBot]-instantiates>[OrderBot],
 [FoodBot]-instantiates>[AdminBot],
@@ -161,7 +161,7 @@ For success criteria
 [AdminBot]->[Meal]
 ```
 
-![](http://yuml.me/f1db6ecb.png)
+![](http://yuml.me/5ee004e8.png)
 
 ```
 ### Screenshots  
