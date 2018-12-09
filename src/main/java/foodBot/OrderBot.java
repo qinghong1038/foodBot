@@ -108,7 +108,7 @@ public class OrderBot extends TelegramLongPollingBot {
             
             EditMessageText new_message = new EditMessageText()
             		.setChatId(chat_id)
-            		.setMessageId(new Long(message_id).intValue())
+            		.setMessageId(Long.valueOf(message_id).intValue())
             		.setText(answer);
             try {
             	execute(new_message); 
