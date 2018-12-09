@@ -17,6 +17,7 @@ public class FoodBot {
 			OrderBot myOrderBot = new OrderBot();
 			botsApi.registerBot(myOrderBot);
 			botsApi.registerBot(new AdminBot(myOrderBot));
+			System.out.println("FoodBot is ready to use!");
 		} catch (TelegramApiException e) {
 			// catch = in case of exception show error message 
 			e.printStackTrace();
