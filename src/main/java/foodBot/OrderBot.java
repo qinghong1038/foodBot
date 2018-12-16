@@ -179,8 +179,8 @@ public class OrderBot extends TelegramLongPollingBot {
         // initialize (inner) state: choice <-> responses given (initial 0)
         m_choices.clear();
         m_chatIdsWithOrders.clear();
-        m_choices.put(choice1, new Meal("Spaghetti", 950));
-        m_choices.put(choice2, new Meal("Burrito", 1150));
+        m_choices.put(choice1, new Meal("Veal Burger (CH)", 1400));
+        m_choices.put(choice2, new Meal("Moussaka with Lamb", 1000));
         m_choices.put(choice3, new Meal("NoThanks", 0));
     }
 
