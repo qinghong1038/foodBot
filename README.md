@@ -5,6 +5,10 @@
 ## A Planning
 
 ### The scenario
+In school I realised that I was never certain on what to eat in school, because I never knew what the school was planning on having for the next day. As my I was looking for a Computer Science IA, the idea of solving the problem for my lunch schedule was ideal. The students have to know the evening before hand what they are going to eat. If they would get informed a day before, they could decide whether they want to eat in school or bring their own food from home. 
+
+The idea of a telegram chatbot came to my mind as it is an automation system and can therefore be used to send respond messages to the students and inform them about the meal. The bot will also have a tool to communicate with the kitchen staff to ensure safe organisation. Students will have the option to choose in the chat conversation and the bot will inform the kitchen on how many meal items to prepare for the next days meal.
+
  
 Cook and cafeteria owner who defines the food schedule for the upcoming weeks. Students and staff often don't know what they're about to have for lunch. This results in fewer meals being purchased because they do not know whether they should bring money or home-made lunch instead.
 
