@@ -86,13 +86,12 @@ public class AdminBot extends TelegramLongPollingBot {
         }
     }
     
-
     public String getBotUsername() {
-        return "secondfoodbot";
+        return "ISB_adminbot";
     }
 
     public String getBotToken() {
-        return "683028665:AAFacGJ5e8lnh1d5EfgSBsPKonGBjElFLZU";
+        return "772426637:AAG0hmtfEezXgHQDYcnQ8y_yuzkN61iFits";
     }
 
     public void notifyNewMealsSend(String latestStatus) {

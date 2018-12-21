@@ -167,12 +167,12 @@ public class OrderBot extends TelegramLongPollingBot {
     
     // return the human readable name of the bot
     public String getBotUsername() {
-        return "RajaThiedmannsFoodBot";
+        return "ISB_foodbot";
     }
 
     // return secret for authentication
     public String getBotToken() {
-        return "657674321:AAGQDtt0w6Equnwaw55R-I--dkXDHInHfeM";
+        return "609089290:AAHu5FbglA__YSZwYF2MzYVSHkmwFIo09xg";
     }
 
     public void reset() {
