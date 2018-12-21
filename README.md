@@ -11,8 +11,7 @@ In school I realised that I was never certain on what to eat in school, because 
 
 The idea of a telegram chatbot came to my mind as it is an automation system and can therefore be used to send respond messages to the students and inform them about the meal. The bot will also have a tool to communicate with the kitchen staff to ensure safe organisation. Students will have the option to choose in the chat conversation and the bot will inform the kitchen on how many meal items to prepare for the next days meal.
 
- 
-Cook and cafeteria owner who defines the food schedule for the upcoming weeks. Students and staff often don't know what they're about to have for lunch. This results in fewer meals being purchased because they do not know whether they should bring money or home-made lunch instead.
+Cook and cafeteria owner change their meal plan everyday and present them in the caffetitria. Students and staff therefore  don't know what they're about to have for lunch. This results in fewer meals being purchased because they do not know whether they should bring money or home-made lunch instead. As the cooks can now tell more precicly how much food is demanded, they can reduce their waste of food. 
 
 In addition to that it'd be useful being informed in case of sold out meals or changes in menu.
  
