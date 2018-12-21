@@ -1,5 +1,7 @@
 # foodBot
 
+<img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fgithub.com%2Frajathie%2FfoodBot&amp;format=png&amp;ecc=H" alt="foodBot-QR-Token-H-PNG" title="foodBot-QR-Token-H-PNG" />
+
 # Criteria
 
 ## A Planning
