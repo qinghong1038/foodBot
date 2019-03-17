@@ -105,14 +105,6 @@ Of the output:
 
 #### Admin POV
 
-##### Order status
-
-![](img/mealStatus.png)
-
-##### Plan next meal
-
-![](img/planMeal.png)
-
 ##### Meal change
 
 ![](img/mealChangeAndStatus.png)
