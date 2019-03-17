@@ -63,31 +63,14 @@ for sucesss criteria
 
 ![](http://yuml.me/491a8726.png)
 
-#### UML - Activity diagrams
 
-##### Customer POV: Place meal order 
-```
-(start)->(open Telegram),
-(start)->(receive meal push notification),
-(receive meal push notification)->(receive meal choice),
-(Open Telegram)->|a|->(start Foodbot conversation)->|b|,
-|a|->(open Foodbot conversation)->|b|,
-|b|->(send message)-><z>[not ordered]->(receive meal choice)->|c|,
-<z>[already ordered]->(cancel order?),
-(cancel order?)-><y>[yes]->(order up to date?),
-(order up to date?)-><x>[yes]->(cancel confirmation),
-<x>[no]->(receive confirmation),
-<y>[no]->(send message),
-(cancel confirmation)->(send message),
-|c|->(choose meal 1)->|d|,
-|c|->(choose meal 2)->|d|,
-|c|->(no thanks)->|d|,
-|d|->(receive confirmation),
-(receive confirmation)->(send message),
-(receive confirmation)->(end)
-```
 
-![](http://yuml.me/cc4a94b6.png)
+##### FlowChart: Customer POV - Place meal order
+
+![](img/flow-charts-orderingProcess.png)
+
+#### UML - Activity diagrams 
+
 
 ##### Admin POV: Change meal process
 
